@@ -10,7 +10,7 @@ Replicaset object is use to maintain a stable set of replicated pods running wit
 - A replicaset also ensures that additional pod need to be created or deleted whenever instance whith same label is created.
 
 **Kubernetes helps with the following:**
-- **Load Balancing: **
+- **Load Balancing:** 
 
 
 
