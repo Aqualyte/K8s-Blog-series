@@ -54,6 +54,7 @@ spec:
 
 # What is Deployment ?
 
+![02_deployment_png24](https://user-images.githubusercontent.com/69069614/197215552-a266785f-4758-4a5e-bc0a-593f999a24e2.png)
 
 # Deployment with Replicaset
 
