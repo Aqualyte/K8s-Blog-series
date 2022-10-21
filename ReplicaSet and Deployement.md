@@ -54,8 +54,6 @@ spec:
 
 # What is Deployment ?
 
-![02_deployment_png24](https://user-images.githubusercontent.com/69069614/197215552-a266785f-4758-4a5e-bc0a-593f999a24e2.png)
-
 ![image](https://user-images.githubusercontent.com/69069614/197216181-fb953a23-60f9-4131-8392-2c7818fb6134.png)
 
 
