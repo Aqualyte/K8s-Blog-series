@@ -4,6 +4,9 @@ Replicaset object is use to maintain a stable set of replicated pods running wit
 
 ![rs4](https://user-images.githubusercontent.com/69069614/197024265-d1a65708-af00-41ba-958c-10fadf672fe7.png)
 
+![rs5](https://user-images.githubusercontent.com/69069614/197148503-513d26c0-a203-4386-a335-ea92bc13d813.PNG)
+
+
 **Replicaset has following features:**
 - A pod template is used to create a new pod whenever a existing pod fails and also replica count is also maintain by defining the desired number of replicas that a controller needs to be running.
 - A replicaset also ensures that additional pod need to be created or deleted whenever instance whith same label is created.
