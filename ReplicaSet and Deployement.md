@@ -53,7 +53,7 @@ spec:
 - **ApiVersion:** It defines kubernetes API that supports ReplicaSet.
 
 # What is Deployment ?
-
+Deployment is use to maintian the versions of your application running in the pod. It helps in efficiently scale the number of replica pods
 
 ![image](https://user-images.githubusercontent.com/69069614/197216181-fb953a23-60f9-4131-8392-2c7818fb6134.png)
 
