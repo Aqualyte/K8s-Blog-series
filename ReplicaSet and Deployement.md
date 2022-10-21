@@ -11,6 +11,9 @@ Replicaset object is use to maintain a stable set of replicated pods running wit
 - Replcaet ensures it has multiple replicas of application so that it wont fail because of one pod fails.
 
 # Replicaset Configuration
+
+**Below is the yaml file which create multi replicas of pod.**
+
 ```
 ---
 apiVersion: apps/v1
@@ -41,6 +44,11 @@ spec:
         - containerPort: 80
           protocol: TCP
 ```
+
+**Fields that defines replicaset are as follows:**
+
+- **Selector:** It is used to identify for which pod the replicaset is responsible for.
+- **Replicas:** It 
 
 # What is Deployment ?
 
