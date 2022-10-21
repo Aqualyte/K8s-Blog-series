@@ -12,7 +12,7 @@ Replicaset object is use to maintain a stable set of replicated pods running wit
 
 # Replicaset Configuration
 
-**Below is the yaml file which create multi replicas of pod.**
+**Below is the yaml file which will create multi replicas of pod.**
 
 ```
 ---
@@ -45,10 +45,12 @@ spec:
           protocol: TCP
 ```
 
-**Fields that defines replicaset are as follows:**
+**Fields that are use to define replicaset are as follows:**
 
 - **Selector:** It is used to identify for which pod the replicaset is responsible for.
-- **Replicas:** It 
+- **Replicas:** It specifies the number of pods which replicaset has to maintain.
+- **Template:** It defines he pod template that replicaset will use in order to create new pods.
+- **ApiVersion:** It defines kubernetes API that supports ReplicaSet.
 
 # What is Deployment ?
 
