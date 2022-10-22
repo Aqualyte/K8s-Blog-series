@@ -53,7 +53,9 @@ spec:
 - **ApiVersion:** It defines kubernetes API that supports ReplicaSet.
 
 # What is Deployment ?
-Deployment is use to maintian the versions of your application running in the pod. It helps to efficiently scale the number of replica pods and enable the rollout and rollback to an earlier deployment version.
+Deployment is use to maintian the versions of your application running in the pod. It helps to efficiently scale the number of replica pods and enable the rollout and rollback to an earlier deployment version. Deployements runs on multile replicas of pod and automatically replaces a pod in case of any failure or unresponsive. In this way Deployments helps to ensure that one or more instances of your application are available to serve user requests. 
+
+Deployments use a Pod template, which contains a specification for its Pods. The Pod specification determines how each Pod should look like: what applications should run inside its containers, which volumes the Pods should mount, its labels, and more. When a Deployment's Pod template is changed, new Pods are automatically created one at a time.
 
 ![image](https://user-images.githubusercontent.com/69069614/197216181-fb953a23-60f9-4131-8392-2c7818fb6134.png)
 
