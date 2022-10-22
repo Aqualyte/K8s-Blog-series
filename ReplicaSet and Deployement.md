@@ -60,6 +60,7 @@ Deployments use a Pod template, which contains a specification for its Pods. The
 ![image](https://user-images.githubusercontent.com/69069614/197216181-fb953a23-60f9-4131-8392-2c7818fb6134.png)
 
 **What are Rolling Update and Rollback in Deployment ?**
+
 Basically, Rolling update provides the orderly migration from one version to newer version. Rolling update is used in such situation when a new version of application came and you have to switch to newer version. In the rolling update all the running pod will be replaced with the newer version of application by systematically terminating the older version of application pods.
 
 Rollback on the other hand is use to rollback to older version of your application. Suppose you have new bug in the application that need to be solve in that case you might need to go to older version of the application with rolling update you can achieve that. With rollback all the replicas of pod which are running on the newer version of application will be rollback again to previou version. 
