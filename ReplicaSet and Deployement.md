@@ -68,6 +68,66 @@ Rollback on the other hand is use to rollback to older version of your applicati
 
 # Deployment with Replicaset
 
+Deploymens are generelly used with replicaset as they are used to manage replicsets. With the help of deployment You can simply roll back to a previous Deployment revision when managing a ReplicaSet using a Deployment. You can also use a Deployment to create a new revision of a ReplicaSet and then migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning up old, unused ReplicaSets.
 
+Basically, Replicaset ensure replicas of pods are available whereas deployment are reponsible for managing different versions of the application. Like deployemnt replicaset cant rollou or rollback to different version of application nor maintain any revisions for the same.
 
+**Deployemnt Configuration**
+
+Below is the yaml file for Deployment.
+
+```
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: facebook
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  revisionHistoryLimit: 10
+  paused: false
+  replicas: 3
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      role: webserver
+      jane: akil
+    matchExpressions:
+      - {key: version, operator: In, values: [v1, v2, v3]}
+  template:
+    metadata:
+      name: web
+      labels:
+        role: webserver
+        version: v3
+        tier: frond
+        jane: akil
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.20-perl
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: facebook
+  labels:
+    role: web-service
+spec:
+  selector:
+    role: webserver
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 32001
+```
 
