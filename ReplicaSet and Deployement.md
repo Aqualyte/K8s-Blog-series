@@ -10,7 +10,7 @@ Replicaset object is use to maintain a stable set of replicated pods running wit
 - Replcaset allows to have multiple replicas of pod which means that the traffic is sent to different instances which prevents single instance from being overloaded.
 - Replcaet ensures it has multiple replicas of application so that it wont fail because of one pod fails.
 
-# Replicaset Configuration
+## Replicaset Configuration
 
 **Below is the yaml file which will create multi replicas of pod.**
 
@@ -59,7 +59,7 @@ Deployments use a Pod template, which contains a specification for its Pods. The
 
 ![image](https://user-images.githubusercontent.com/69069614/197216181-fb953a23-60f9-4131-8392-2c7818fb6134.png)
 
-**What are Rolling Update and Rollback in Deployment ?**
+## What are Rolling Update and Rollback in Deployment ?
 
 Basically, Rolling update provides the orderly migration from one version to newer version. Rolling update is used in such situation when a new version of application came and you have to switch to newer version. In the rolling update all the running pod will be replaced with the newer version of application by systematically terminating the older version of application pods.
 
@@ -72,9 +72,9 @@ Deploymens are generelly used with replicaset as they are used to manage replics
 
 Basically, Replicaset ensure replicas of pods are available whereas deployment are reponsible for managing different versions of the application. Like deployemnt replicaset cant rollou or rollback to different version of application nor maintain any revisions for the same.
 
-**Deployemnt Configuration**
+## Deployemnt Configuration
 
-Below is the yaml file for Deployment.
+**Below is the yaml file for Deployment.**
 
 ```
 ---
