@@ -49,11 +49,11 @@ spec:
 
 - **Selector:** It is used to identify for which pod the replicaset is responsible for.
 - **Replicas:** It specifies the number of pods which replicaset has to maintain.
-- **Template:** It defines he pod template that replicaset will use in order to create new pods.
+- **Template:** It defines the pod template that replicaset will use in order to create new pods.
 - **ApiVersion:** It defines kubernetes API that supports ReplicaSet.
 
 # What is Deployment ?
-Deployment is use to maintian the versions of your application running in the pod. It helps to efficiently scale the number of replica pods and enable the rollout and rollback to an earlier deployment version. Deployements runs on multile replicas of pod and automatically replaces a pod in case of any failure or unresponsive. In this way Deployments helps to ensure that one or more instances of your application are available to serve user requests. 
+Deployment is use to maintain the versions of your application running in the pod. It helps to efficiently scale the number of replica pods and enable the rollout and rollback to an earlier deployment version. Deployments runs on multiple replicas of the pod and automatically replaces a pod in case of any failure or unresponsive. In this way Deployments helps to ensure that one or more instances of your application are available to serve user requests. 
 
 Deployments use a Pod template, which contains a specification for its Pods. The Pod specification determines how each Pod should look like: what applications should run inside its containers, which volumes the Pods should mount, its labels, and more. When a Deployment's Pod template is changed, new Pods are automatically created one at a time.
 
@@ -61,10 +61,9 @@ Deployments use a Pod template, which contains a specification for its Pods. The
 
 ## What are Rolling Update and Rollback in Deployment ?
 
-Basically, Rolling update provides the orderly migration from one version to newer version. Rolling update is used in such situation when a new version of application came and you have to switch to newer version. In the rolling update all the running pod will be replaced with the newer version of application by systematically terminating the older version of application pods.
+Basically, Rolling update provides the orderly migration from one version to a newer version. Rolling update is used in such situation when a new version of application came and you have to switch to a newer version. In the rolling update all the running pod will be replaced with the newer version of application by systematically terminating the older version of application pods.
 
-Rollback on the other hand is use to rollback to older version of your application. Suppose you have new bug in the application that need to be solve in that case you might need to go to older version of the application with rollback you can achieve that. With rollback all the replicas of pod which are running on the newer version of application will be rollback again to previou version. 
-
+Rollback on the other hand is used to roll back to older version of your application. Suppose you have a new bug in the application that needs to be solved in that case you might need to go to the older version of the application with rollback you can achieve that. With rollback all the replicas of the pod which are running on the new version of the application will be rollback again to previous version.
 
 # Deployment with Replicaset
 
