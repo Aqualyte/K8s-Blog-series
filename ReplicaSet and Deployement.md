@@ -1,14 +1,14 @@
-# What is Replicaset ?
+# What is ReplicaSet ?
 
-Replicaset object is use to maintain a stable set of replicated pods running within a cluster at any given time. Its purpose is to maintain the specified number of pods and prevent the user from loosing the control of the application incase of any pod failure or inaccessible. Whenever any pod gets failed replicaset immidiatly launces another pod and replacing it with failed pod.
+ReplicaSet object is used to maintain a stable set of replicated pods running within a cluster at any given time. Its purpose is to maintain the specified number of pods and prevent the user from loosing the control of the application in case of any pod failure or inaccessible. Whenever any pod gets failed replicaset immediately launches another pod and replacing it with failed pod.
 
 ![rs6](https://user-images.githubusercontent.com/69069614/197348646-c191b79d-9e02-43c8-beab-4b33b6b8566e.png)
 
 **Replicaset has following features:**
-- A pod template is used to create a new pod whenever a existing pod fails and also replica count is also maintain by defining the desired number of replicas that a controller needs to be running.
-- A replicaset also ensures that additional pod need to be created or deleted whenever instance whith same label is created.
+- A pod template is used to create a new pod whenever an existing pod fails and also replica count is also maintained by defining the desired number of replicas that a controller needs to be running.
+- A replica set also ensures that additional pod needs to be created or deleted whenever instance with same label is created.
 - Replcaset allows to have multiple replicas of pod which means that the traffic is sent to different instances which prevents single instance from being overloaded.
-- Replcaet ensures it has multiple replicas of application so that it wont fail because of one pod fails.
+- Replcaset ensures it has multiple replicas of application so that it won't fail because of one pod fails.
 
 ## Replicaset Configuration
 
@@ -63,14 +63,14 @@ Deployments use a Pod template, which contains a specification for its Pods. The
 
 Basically, Rolling update provides the orderly migration from one version to newer version. Rolling update is used in such situation when a new version of application came and you have to switch to newer version. In the rolling update all the running pod will be replaced with the newer version of application by systematically terminating the older version of application pods.
 
-Rollback on the other hand is use to rollback to older version of your application. Suppose you have new bug in the application that need to be solve in that case you might need to go to older version of the application with rolling update you can achieve that. With rollback all the replicas of pod which are running on the newer version of application will be rollback again to previou version. 
+Rollback on the other hand is use to rollback to older version of your application. Suppose you have new bug in the application that need to be solve in that case you might need to go to older version of the application with rollback you can achieve that. With rollback all the replicas of pod which are running on the newer version of application will be rollback again to previou version. 
 
 
 # Deployment with Replicaset
 
-Deploymens are generelly used with replicaset as they are used to manage replicsets. With the help of deployment You can simply roll back to a previous Deployment revision when managing a ReplicaSet using a Deployment. You can also use a Deployment to create a new revision of a ReplicaSet and then migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning up old, unused ReplicaSets.
+Deploymens are generelly used with replicaset as they are used to manage replicsets. With the help of deployment You can simply roll back to a previous Deployment revision. When you are managing ReplicaSet using Deployment You can also use a Deployment to create a new revision of a ReplicaSet and then migrate existing pods from an older revision into the new revision. After that, the Deployment can take care of cleaning up old, unused ReplicaSets.
 
-Basically, Replicaset ensure replicas of pods are available whereas deployment are reponsible for managing different versions of the application. Like deployemnt replicaset cant rollou or rollback to different version of application nor maintain any revisions for the same.
+So, Replicaset ensure replicas of pods are available whereas deployment are reponsible for managing different versions of the application. Like deployemnt replicaset cant rollout or rollback to different version of application nor maintain any revisions for the same.
 
 ## Deployemnt Configuration
 
