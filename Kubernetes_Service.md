@@ -75,7 +75,7 @@ kubectl get svc mysvc
 
 # LoadBalancer
 
-This is the most common used service but this can used only with the managed kubernetes like GKS, AKS, EKS. In case of AWS it will create a classic load balancer in which it will route the traffic to the EC2 node and via Nodeport service to all pods.
+This is the most common used service but this can used only with the managed kubernetes like GKS, AKS, EKS. In case of AWS it will create a classic load balancer in which it will route the traffic to the EC2 node and via Nodeport service to all pods.  There’s no automatic filtering or routing. Traffic to the external IP and port will be sent straight to your service. This means that they’re suitable for all traffic types.
 
 ![image](https://user-images.githubusercontent.com/69069614/205437209-44a2dcb9-ae8f-4a07-8c00-15318387b861.png)
 
@@ -106,3 +106,7 @@ By applying the above file you will get external ip form the cloud provider IP p
 ```
 kubectl get svc mysvc
 ```
+
+# Conclusion
+
+ClusterIPs, NodePorts, LoadBalncers route the external trrafic to your pod in the cluster. Each one has its own different usecases. They enbale the network access to your services make them publicaly accessible.
