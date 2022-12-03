@@ -6,7 +6,7 @@ By default your application running in the pods are not availabel for outside wo
 - ClusterIP
 - LoadBalancer
 
-### NodePort
+# NodePort
 
 In this type of service you are allowing the external traffic by opening TCP port of your worker node and via kube-proxy which available in all node will proxy requests from the TCP port to the pod on this node. Behind it will create the ClusterIP which will route the traffic from this ClusterIP to the port. Internally loadbalancing will performed to divert traffice to different pods in the node.
 
@@ -42,7 +42,7 @@ Now you can simply apply the above YAML file to create service. To check the ser
 kubectl get svc mysvc
 ```
 
-### ClusterIP
+# ClusterIP
 
 This is the default type of service when you create any service and if yo didn't specify any type ClusterIP will be the defaultly allocated but this will be available internally to the pod to communicate with each other. Application can internally communicate within cluster without any access from outside world.
 
@@ -73,7 +73,7 @@ Yo can apply the above yaml file and Check:
 kubectl get svc mysvc
 ```
 
-### LoadBalancer
+# LoadBalancer
 
 This is the most common used service but this can used only with the managed kubernetes like GKS, AKS, EKS. In case of AWS it will create a classic load balancer in which it will route the traffic to the EC2 node and via Nodeport service to all pods.
 
