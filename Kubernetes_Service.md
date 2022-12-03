@@ -12,7 +12,7 @@ In this type of service you are allowing the external traffic by opening TCP por
 
 ![image](https://user-images.githubusercontent.com/69069614/205437185-296cf220-fd10-43e6-a778-36b08aa23292.png)
 
-**NodePort Type:**
+**NodePort Type: **
 
 - Will be tied up with you host eg: EC2.
 - Depends on host, if host is not available then this service won't work.
