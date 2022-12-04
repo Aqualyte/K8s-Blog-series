@@ -107,6 +107,15 @@ By applying the above file you will get external ip form the cloud provider IP p
 kubectl get svc mysvc
 ```
 
+# Communty Asked Questions
+
+- What is the difference between NodePort and LoadBalncer ?
+
+| NodePort      | LoadBalncer   |
+| ------------- | ------------- |
+| By creating a NodePort service, you are saying to Kubernetes reserve a port on all its nodes and forwards incoming connections to the pods that are part of the service.    | Content Cell  |
+| Content Cell  | Content Cell  |
+
 # Conclusion
 
 ClusterIPs, NodePorts, LoadBalncers route the external trrafic to your pod in the cluster. Each one has its own different usecases. They enbale the network access to your services make them publicaly accessible.
