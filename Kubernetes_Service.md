@@ -107,9 +107,9 @@ By applying the above file you will get external ip form the cloud provider IP p
 kubectl get svc mysvc
 ```
 
-# Communty Asked Questions
+# FAQs
 
-- What is the difference between NodePort and LoadBalncer ?
+- **What is the difference between NodePort and LoadBalncer ?**
 
 | NodePort      | LoadBalncer   |
 | ------------- | ------------- |
@@ -118,11 +118,14 @@ kubectl get svc mysvc
 | Specifying the port isn’t mandatory. Kubernetes will choose a random port if you omit it( default range 30000 - 32767).  | Load balancer will have its own unique, publicly accessible IP address and will redirect all connections to your service  |
 | If you only point your clients to the first node, when that node fails, your clients can’t access the service anymore  | With Load balancer in front of the nodes to make sure you’re spreading requests across all healthy nodes and never sending them to a node that’s offline at that moment.  |
 
-- Does ClusterIP have LoadBalnce ?
+- **Does ClusterIP have LoadBalnce ?**
 
-The ClusterIP provides a load-balanced IP address. One or more pods that match a label selector can forward traffic to the IP address. The ClusterIP service must define one or more ports to listen on with target ports to forward TCP/UDP traffic to containers
+The ClusterIP provides a load-balanced IP address. One or more pods that match a label selector can forward traffic to the IP address. The ClusterIP service must define one or more ports to listen on with target ports to forward TCP/UDP traffic to containers.
 
-- 
+- **Does LoadBalancer use NodePort?**
+
+The service can then be accessed through the IP address provided by the Cloud Service load balancer, which will route the request to a NodePort and from there forwarded to a ClusterIp. So, LoadBalancer builds upon NodePort and ClusterIp.
+
 # Conclusion
 
 ClusterIPs, NodePorts, LoadBalncers route the external trrafic to your pod in the cluster. Each one has its own different usecases. They enbale the network access to your services make them publicaly accessible.
