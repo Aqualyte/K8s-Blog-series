@@ -113,9 +113,16 @@ kubectl get svc mysvc
 
 | NodePort      | LoadBalncer   |
 | ------------- | ------------- |
-| By creating a NodePort service, you are saying to Kubernetes reserve a port on all its nodes and forwards incoming connections to the pods that are part of the service.    | Content Cell  |
-| Content Cell  | Content Cell  |
+| By creating a NodePort service, you are saying to Kubernetes reserve a port on all its nodes and forwards incoming connections to the pods that are part of the service.    | There is no such port reserve with Load balancer on each node in the cluster.  |
+| NodePort service can be accessed not only through the service’s internal cluster IP, but also through any node’s IP and the reserved node port.  | Only accessible by Load balancer public IP  |
+| Specifying the port isn’t mandatory. Kubernetes will choose a random port if you omit it( default range 30000 - 32767).  | Load balancer will have its own unique, publicly accessible IP address and will redirect all connections to your service  |
+| If you only point your clients to the first node, when that node fails, your clients can’t access the service anymore  | With Load balancer in front of the nodes to make sure you’re spreading requests across all healthy nodes and never sending them to a node that’s offline at that moment.  |
 
+- Does ClusterIP have LoadBalnce ?
+
+The ClusterIP provides a load-balanced IP address. One or more pods that match a label selector can forward traffic to the IP address. The ClusterIP service must define one or more ports to listen on with target ports to forward TCP/UDP traffic to containers
+
+- 
 # Conclusion
 
 ClusterIPs, NodePorts, LoadBalncers route the external trrafic to your pod in the cluster. Each one has its own different usecases. They enbale the network access to your services make them publicaly accessible.
