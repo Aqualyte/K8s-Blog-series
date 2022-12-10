@@ -41,4 +41,9 @@ spec:
 initContainers fiels is added in the manifestfile con1 is our main container which will execute after the command in the initContainer gets complted. After applying the above file you execute get command and under statuts you will see **Init:1/1** it means init container is executing if the the execution completes this **Init** will also get removed from status.
 
 
-# Dea
+# DaemonSets
+
+## What are DaemonSet?
+
+![image](https://user-images.githubusercontent.com/69069614/206865418-323b0dc8-1424-4ab3-be97-a544483fef9a.png)
+
