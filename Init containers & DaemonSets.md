@@ -1,11 +1,13 @@
-# What are InitContainers?
+# InitContainers
+
+## What are InitContainers?
 
 InitContainers are same as normal container only difference is the perfom the certiain task before the main contianer starts. Initcontainers are not running for longer period of time like other containers once the init container task is done it no longer running. After the task completes main container starts. There can be multiple init containers and can run one by on and completes the task.
 
 ![image-removebg-preview](https://user-images.githubusercontent.com/69069614/206639515-748ac96d-2b3f-444e-9c0d-fc1d5ceb4f90.png)
 
 
-# What is use of InitContainers? and When to use InitContainers ?
+## What is use of InitContainers? and When to use InitContainers ?
 
 InitContainers are used to perform some task before starting the main containers. These task maybe related to changing file permission for some specific environment, also they can be use to precheck of file for starting the application. There may be some tasks that only the root user can do. And since you never want to run your application as a root user as this is a security threat. Init containers can do the task for you that you wanted to run as a root user.
 
@@ -19,7 +21,7 @@ Below are the Few sitiuations where you might use InitConyainers:
 
 One limitations that InitContainers are having that you cant assign any kind of liveness or rediness probe. These are the separate mechanism which are used with main containers.
 
-# InitContainers manifest File
+## InitContainers manifest File
 
 ```
 apiVersion: v1
@@ -37,3 +39,6 @@ spec:
  ```
  
 initContainers fiels is added in the manifestfile con1 is our main container which will execute after the command in the initContainer gets complted. After applying the above file you execute get command and under statuts you will see **Init:1/1** it means init container is executing if the the execution completes this **Init** will also get removed from status.
+
+
+# Dea
