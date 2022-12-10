@@ -45,5 +45,7 @@ initContainers fiels is added in the manifestfile con1 is our main container whi
 
 ## What are DaemonSet?
 
-![image](https://user-images.githubusercontent.com/69069614/206865418-323b0dc8-1424-4ab3-be97-a544483fef9a.png)
+![image](https://user-images.githubusercontent.com/69069614/206865506-b88a2cd3-48ad-4b81-8527-07dff8c963dd.png)
+
+
 
