@@ -139,3 +139,23 @@ kubectl get all -n kube-system
 ```
 kubectl get all -n kube-system -o wide
 ```
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: test-network-policy
+  namespace: ns1
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ns3
+      ports:
+        - protocol: TCP
+          port: 80
+```
